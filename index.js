@@ -31,28 +31,13 @@ function dcheck() {
 }
 
 function download() {
-    const { jsPDF } = window.jspdf;
 
-    // Set up jsPDF instance
-    const pdf = new jsPDF({
-        orientation: 'landscape', // Landscape orientation for certificate
-        unit: 'px',               // Use pixels for size
-        format: [1150, 650],      // Custom size: width x height
-    });
+        var body = document.getElementById('body').innerHTML;
+        var main = document.getElementById('main').innerHTML;
+        document.getElementById('body').innerHTML = main;
+        window.print();
+        document.getElementById('body').innerHTML = body;
 
-    // Get the certificate element
-    const main = document.getElementById('main');
-
-    // Add HTML content to PDF
-    pdf.html(main, {
-        callback: function (doc) {
-            doc.save("E-Certificate.pdf"); // Save the PDF
-        },
-        x: 0,
-        y: 0, // Position of the content in the PDF
-        width: 1150, // Match the width
-        windowWidth: 1150, // Ensure correct scaling
-    });
-}
+    }
 
     
