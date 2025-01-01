@@ -29,8 +29,7 @@ function dcheck() {
         alert("Input field is empty.");
     }
 }
-
-function download() {
+    function download() {
 
         var body = document.getElementById('body').innerHTML;
         var main = document.getElementById('main').innerHTML;
@@ -39,5 +38,4 @@ function download() {
         document.getElementById('body').innerHTML = body;
 
     }
-
     
